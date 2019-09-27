@@ -7,13 +7,16 @@ import reactor.core.publisher.Mono;
 
 public interface CourseService {
 
-    Flux<Course> GetAll();
+ 
+  Mono <Course> CreateCourse(Course course);
 
-    Mono<Course> findById(String id);
+  Mono<Void> DeleteById(String id);
 
-    Mono<Course> CreateCourse(Course course);
+  Mono<Course> findById(String id);
 
-    Mono<Course> ModifyCourse(String id,Course course);
+  Flux<Course> findByIdcourse(String idcourse);
 
-    Mono<Void> DeleteById(String id);
+  Flux<Course> GetAll();
+
+  Mono<Course> ModifyCourse(String id, Course course);
 }
